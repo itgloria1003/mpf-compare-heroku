@@ -1,8 +1,10 @@
 package com.github.britter.springbootherokudemo;
 
-import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.stereotype.Repository;
+import java.util.List;
 
-@Repository
-public interface RecordRepository extends JpaRepository<Record, Long> {
+import org.springframework.data.repository.CrudRepository;
+
+public interface RecordRepository extends CrudRepository<Record, Long> {
+
+    List<Record> findByData(String data);
 }
